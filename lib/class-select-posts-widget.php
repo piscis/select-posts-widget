@@ -41,7 +41,7 @@ class Select_Posts_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		$template_file = plugin_dir_path( dirname( __FILE__ ) ) . 'views/widget.php';
 		$template_file = apply_filters( 'spw_template', $template_file, $this->id );
-		$title         = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Posts' );
+		$title         = ( ! empty( $instance['title'] ) ) ? $instance['title'] : null;
 		$title         = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 		$posts         = json_decode( $instance['post-order'] );
 		if ( ! is_array( $posts ) || ! count( $posts ) ) {
